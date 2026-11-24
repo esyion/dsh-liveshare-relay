@@ -1,0 +1,36 @@
+{
+  "name": "dsh-liveshare-relay",
+  "version": "0.1.0",
+  "description": "Community, self-hosted relay server for DeepSeek Harness (DSH) experimental LiveShare session sharing",
+  "type": "module",
+  "license": "MIT",
+  "author": "esyion",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "liveshare",
+    "relay",
+    "websocket",
+    "self-hosted",
+    "docker",
+    "session-sharing"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node smoke-test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esyion/dsh-liveshare-relay.git"
+  },
+  "bugs": {
+    "url": "https://github.com/esyion/dsh-liveshare-relay/issues"
+  },
+  "homepage": "https://github.com/esyion/dsh-liveshare-relay#readme",
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

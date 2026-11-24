@@ -1,0 +1,19 @@
+services:
+  liveshare-relay:
+    build: .
+    image: liveshare-relay:latest
+    container_name: liveshare-relay
+    ports:
+      - "8787:8787"
+    environment:
+      LIVESHARE_RELAY_PORT: "8787"
+      LIVESHARE_RELAY_HOST: "0.0.0.0"
+      # 挂在子路径下时打开(例如反代 /liveshare/ -> 本服务):
+      # LIVESHARE_BASE_PATH: /liveshare
+      # 分享列表持久化(容器重启后链接仍可用;owner 凭证签名密钥一并保存在此文件)
+      LIVESHARE_RELAY_STATE_FILE: /data/relay-state.json
+      # 可选:owner 凭证有效期(小时,默认 24)
+      # LIVESHARE_OWNER_CREDENTIAL_TTL_HOURS: "24"
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
